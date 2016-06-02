@@ -7,10 +7,6 @@ angular.module('wixApp', [
   ])
   .config(function ($routeProvider) {
     $routeProvider
-        .when('/hello', {
-            template: 'views/hello.html',
-            controller: 'MainCtrl'
-        })
         .when('/', {
         templateUrl: 'views/app.html',
         controller: 'MainCtrl'
