@@ -114,6 +114,7 @@ QoutesUtilHelper = {
   }, hasScrollBar: function (a) {
     return $("#" + a).get(0).scrollHeight > $("#" + a).height()
   }, updateHeight: function () {
+    console.log('updating height');
     var a = $("#quoteContent").height();
     $("#widgetBody").height(a + 10);
     Wix.setHeight(a + 10 + quoteSettings.wixUi.borderSize * 2);
