@@ -10,6 +10,7 @@ import path from 'path';
 export default function(app) {
   // Insert routes below
   app.use('/api/things', require('./api/thing'));
+  app.use('/api/quote', require('./api/quote'));
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
    .get(errors[404]);
@@ -18,6 +19,7 @@ export default function(app) {
   // All other routes should redirect to the index.html
   app.route('/hello')
     .get((req, res) => {
+      var quote =
     res.send('hello1');
 });
 

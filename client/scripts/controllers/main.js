@@ -3,12 +3,8 @@
 angular.module('wixApp')
   .controller('MainCtrl', function ($scope, $wix, httpRest) {
 
-      httpRest.getHello().then(function(data){
-          $scope.helloValue = data;
-          console.log(data);
-      }).catch(function(err) {
-            console.log(err);
-      });
+    var instanceId,
+        instance;
 
     $scope.handleEvent = function(event) {
       $scope.$apply(function() {
@@ -19,7 +15,17 @@ angular.module('wixApp')
     $wix.addEventListener($wix.Events.SETTINGS_UPDATED, $scope.handleEvent);
 
     if ($wix.Utils.getViewMode() !== 'standalone') {
-      $scope.instanceId = $wix.Utils.getInstanceId();
-      $scope.instance = $wix.Utils.getInstance();
+      instanceId =  $wix.Utils.getInstanceId();
+      instance = $wix.Utils.getInstance();
+      $scope.instanceId = instanceId;
+      $scope.instance = instance;
     }
+
+    httpRest.getHello(instanceId, instance).then(function(res){
+      $scope.helloValue = res.data;
+      console.log(res.data);
+    }).catch(function(err) {
+      console.log(err);
+    });
+
   });
