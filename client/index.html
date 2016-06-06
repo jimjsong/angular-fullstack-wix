@@ -16,10 +16,12 @@
   <style wix-style>
     body {
       color: {{style.textColor color-5}};
-      background-color: {{style.backgroundColor color-1}};
+      background-color: {{style.bgColor color-1}};
     }
     #widgetBody {
     border-color: {{style.borderColor color-1}};
+    border-width: 4;
+    border-raidus: {{style.borderRadius 3}};
     }
 
     .bodyBack {
@@ -33,7 +35,7 @@
 
     #quoteAuthor {
     {{style.authorFontStyleP Body-L}};
-    color: {{style.authorColor color-5}};
+    color: {{style.quoteColor color-5}};
     }
   </style>
   <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -56,12 +58,12 @@
 <script type="text/javascript" src="/scripts/quote.widget.1-min.js"></script>
 <script type="text/javascript">
   var quotes = [{"q":"The highest art is always the most religious, and the greatest artist is always a devout person.","a":"Abraham Lincoln","p":null},{"q":"If you hear a voice within you say 'you cannot paint,' then by all means paint, and that voice will be silenced.","a":"Vincent Van Gogh","p":null},{"q":"No great artist ever sees things as they really are. If he did, he would cease to be an artist.","a":"Oscar Wilde","p":null},{"q":"The purpose of art is washing the dust of daily life off our souls.","a":"Pablo Picasso","p":null},{"q":"True art is characterized by an irresistible urge in the creative artist.","a":"Albert Einstein","p":null}];
-  var quoteSettings = {"wixUi":{"updateTimeP":{"index":"3","value":"60000"},"bgTransparent":false,"borderSize":"0","borderRadius":"25","ART":false,"ARCHITECTURE":false,"BEAUTY":false,"BUSINESS":false,"CAR":false,"COMPUTERS":false,"DIET":false,"EDUCATION":false,"FAITH":false,"FAMILY":false,"FITNESS":false,"FOOD":false,"FREEDOM":false,"FUTURE":false,"GOVERNMENT":false,"HEALTH":false,"HOME":false,"LEADERSHIP":false,"LEARNING":false,"LITERACY":false,"LIFE":false,"LOVE":false,"MARRIAGE":false,"MONEY":false,"MOTIVATIONAL":false,"MOVIES":false,"MUSIC":false,"NATURE":false,"POWER":false,"RELATIONSHIP":false,"SCIENCE":false,"SPORTS":false,"SUCCESS":false,"TECHNOLOGY":false,"TRAVEL":false}};
+  var quoteSettings = {"wixUi":{"updateTimeP":{"index":"3","value":"60000"},"bgTransparent":true,"borderSize":"1","borderRadius":"2"}};
   var instanceVar = 'CD2NTfh1kydkTmstJD_GXCeiR-j56Ys0giqLoSpVJkg.eyJpbnN0YW5jZUlkIjoiMmE5YjI2NWYtMTI1OS00MTA4LWI1MmUtNjFhYjBhODA0YjA2Iiwic2lnbkRhdGUiOiIyMDE2LTA2LTA0VDIxOjI1OjU3LjMyN1oiLCJ1aWQiOiI1ZTY0ZDc0NS00ZTBhLTRkNmQtYmQ1My0yYWVhOWY3M2RmYjUiLCJwZXJtaXNzaW9ucyI6Ik9XTkVSIiwiaXBBbmRQb3J0IjoiNTAuMTY3LjIwNC42OS81NzEwMiIsInZlbmRvclByb2R1Y3RJZCI6bnVsbCwiZGVtb01vZGUiOmZhbHNlLCJzaXRlT3duZXJJZCI6IjVlNjRkNzQ1LTRlMGEtNGQ2ZC1iZDUzLTJhZWE5ZjczZGZiNSJ9';
   var needUpdate = false;
   var deltaTime = new Date().getTime() - 1465075571282;
-  var appInstanceId = '2a9b265f-1259-4108-b52e-61ab0a804b06';
-  var appCompId = 'comp-ip13o5b7';
+/*  var appInstanceId = '2a9b265f-1259-4108-b52e-61ab0a804b06';
+  var appCompId = 'comp-ip13o5b7';*/
 </script>
 </body>
 </html>

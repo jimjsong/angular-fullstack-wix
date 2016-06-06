@@ -85,9 +85,9 @@ QuoteHelper = {
 SettingsHelper = {
   applySettings: function () {
     QoutesUtilHelper.changeWidgetSize();
-    var a = quoteSettings.wixUi.borderRadius + "px";
+    var a = 20 + "px";
     $("#widgetBody").css({
-      "border-width": quoteSettings.wixUi.borderSize + "px",
+      "border-width": 200 + "px",
       "border-style": "solid",
       "-moz-border-radius": a + " " + a + " " + a + " " + a,
       "-webkit-border-radius": a + " " + a + " " + a + " " + a,
@@ -102,19 +102,22 @@ SettingsHelper = {
   }
 };
 QoutesUtilHelper = {
-  timer: null, changeWidgetSize: function () {
+  timer: null,
+  changeWidgetSize: function () {
+    console.log('bordersize', quoteSettings.wixUi.borderSize);
     var a = quoteSettings.wixUi.borderSize * 2;
     console.log('width', $(window).width(), 'height', $(window).height());
-    $("#widgetBody").css({width: $(window).width() - a, height: $(window).height() - a});
+    //$("#widgetBody").css({width: $(window).width() - a, height: $(window).height() - a});
     a = null;
     if (this.timer) {
       clearTimeout(this.timer)
     }
     this.timer = setTimeout(QoutesUtilHelper.updateHeight, 500)
-  }, hasScrollBar: function (a) {
+  },
+  hasScrollBar: function (a) {
     return $("#" + a).get(0).scrollHeight > $("#" + a).height()
-  }, updateHeight: function () {
-    console.log('updating height');
+  },
+  updateHeight: function () {
     var a = $("#quoteContent").height();
     $("#widgetBody").height(a + 10);
     Wix.setHeight(a + 10 + quoteSettings.wixUi.borderSize * 2);

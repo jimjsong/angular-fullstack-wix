@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('wixApp')
-  .controller('MainCtrl', function ($scope, $wix, httpRest) {
+  .controller('MainCtrl', function ($scope, $wix, httpRest, $window) {
 
     var instanceId,
         instance;
@@ -22,6 +22,7 @@ angular.module('wixApp')
     }
 
     httpRest.getHello(instanceId, instance).then(function(res){
+      console.log('window quote settings', $window.quoteSettings);
       $scope.helloValue = res.data;
       console.log(res.data);
     }).catch(function(err) {
