@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base target="_parent" />
-  <title>App</title>
+  <title>Quote of the Day</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="/css/quote.widget-min.css"/>
@@ -12,35 +12,35 @@
   <link rel="stylesheet" href="styles/app.css">
   <!-- endbuild -->
 
-  <script type="text/javascript" src="//sslstatic.wix.com/services/js-sdk/1.42.0/js/wix.min.js"></script>
+  <script type="text/javascript" src="//sslstatic.wix.com/services/js-sdk/1.60.0/js/wix.min.js"></script>
   <style wix-style>
-    body {
-      color: {{style.textColor color-5}};
-      background-color: {{style.bgColor color-1}};
-    }
     #widgetBody {
-    border-color: {{style.borderColor color-1}};
-    border-width: 4;
-    border-raidus: {{style.borderRadius 3}};
+      border-color: {{style.borderColor color-1}};
+      border-width: {{style.borderSize}}px;
+      border-style: solid;
+      border-radius:
+      -moz-border-radius: {{style.borderRadius}}px {{style.borderRadius}}px {{style.borderRadius}}px {{style.borderRadius}}px;
+      -webkit-border-radius: {{style.borderRadius}}px {{style.borderRadius}}px {{style.borderRadius}}px {{style.borderRadius}}px;
+      border-radius: {{style.borderRadius}}px {{style.borderRadius}}px {{style.borderRadius}}px {{style.borderRadius}}px;
     }
 
     .bodyBack {
-    background: {{style.bgColor color-1}};
+      background: {{style.bgColor color-5}};
     }
 
     #quoteText {
-    {{style.quoteFontStyleP Body-L}};
-    color: {{style.quoteColor color-5}};
+      {{style.quoteFontStyleP Body-L}};
+      color: {{style.quoteColor color-5}};
     }
 
     #quoteAuthor {
-    {{style.authorFontStyleP Body-L}};
-    color: {{style.quoteColor color-5}};
+      {{style.authorFontStyleP Body-L}};
+      color: {{style.quoteColor color-5}};
     }
   </style>
   <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body data-ng-app="wixApp">
+<body data-ng-app="wixApp" style="background: none repeat scroll 0 0 rgba(0,0,0,0)">
 
 <div class="app" data-ng-view=""></div>
 
@@ -55,10 +55,10 @@
 <script src="scripts/controllers/main.js"></script>
 <!-- endbuild -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/scripts/quote.widget.1-min.js"></script>
+<!--script type="text/javascript" src="/scripts/quote.widget.1-min.js"></script-->
 <script type="text/javascript">
   var quotes = [{"q":"The highest art is always the most religious, and the greatest artist is always a devout person.","a":"Abraham Lincoln","p":null},{"q":"If you hear a voice within you say 'you cannot paint,' then by all means paint, and that voice will be silenced.","a":"Vincent Van Gogh","p":null},{"q":"No great artist ever sees things as they really are. If he did, he would cease to be an artist.","a":"Oscar Wilde","p":null},{"q":"The purpose of art is washing the dust of daily life off our souls.","a":"Pablo Picasso","p":null},{"q":"True art is characterized by an irresistible urge in the creative artist.","a":"Albert Einstein","p":null}];
-  var quoteSettings = {"wixUi":{"updateTimeP":{"index":"3","value":"60000"},"bgTransparent":true,"borderSize":"1","borderRadius":"2"}};
+  var quoteSettings = {"wixUi":{"updateTimeP":{"index":"3","value":"60000"},"bgTransparent":false,"borderSize":"5","borderRadius":"25"}};
   var instanceVar = 'CD2NTfh1kydkTmstJD_GXCeiR-j56Ys0giqLoSpVJkg.eyJpbnN0YW5jZUlkIjoiMmE5YjI2NWYtMTI1OS00MTA4LWI1MmUtNjFhYjBhODA0YjA2Iiwic2lnbkRhdGUiOiIyMDE2LTA2LTA0VDIxOjI1OjU3LjMyN1oiLCJ1aWQiOiI1ZTY0ZDc0NS00ZTBhLTRkNmQtYmQ1My0yYWVhOWY3M2RmYjUiLCJwZXJtaXNzaW9ucyI6Ik9XTkVSIiwiaXBBbmRQb3J0IjoiNTAuMTY3LjIwNC42OS81NzEwMiIsInZlbmRvclByb2R1Y3RJZCI6bnVsbCwiZGVtb01vZGUiOmZhbHNlLCJzaXRlT3duZXJJZCI6IjVlNjRkNzQ1LTRlMGEtNGQ2ZC1iZDUzLTJhZWE5ZjczZGZiNSJ9';
   var needUpdate = false;
   var deltaTime = new Date().getTime() - 1465075571282;

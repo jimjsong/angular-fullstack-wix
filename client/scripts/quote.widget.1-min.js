@@ -85,14 +85,15 @@ QuoteHelper = {
 SettingsHelper = {
   applySettings: function () {
     QoutesUtilHelper.changeWidgetSize();
-    var a = 20 + "px";
+    var a = quoteSettings.wixUi.borderRadius + "px";
     $("#widgetBody").css({
-      "border-width": 200 + "px",
+      "border-width": quoteSettings.wixUi.borderSize + "px",
       "border-style": "solid",
       "-moz-border-radius": a + " " + a + " " + a + " " + a,
       "-webkit-border-radius": a + " " + a + " " + a + " " + a,
       "border-radius": a + " " + a + " " + a + " " + a
     });
+    console.log('borderRadius', quoteSettings.wixUi.borderRadius, 'borderSize', quoteSettings.wixUi.borderSize);
     if (quoteSettings.wixUi.bgTransparent) {
       $("#widgetBody").removeClass("bodyBack").addClass("bodyBackTransparent")
     } else {
@@ -120,7 +121,7 @@ QoutesUtilHelper = {
   updateHeight: function () {
     var a = $("#quoteContent").height();
     $("#widgetBody").height(a + 10);
-    Wix.setHeight(a + 10 + quoteSettings.wixUi.borderSize * 2);
+    //Wix.setHeight(a + 10 + quoteSettings.wixUi.borderSize * 2);
     a = null
   }, showWidget: function (a) {
     if (a) {
