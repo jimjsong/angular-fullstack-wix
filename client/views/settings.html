@@ -28,20 +28,18 @@
 
     <div class="acc-content">
       <ul class="list">
-        <li wix-label="Quote Color:">
+        <li>
+          <span class="settingsInlineLable">Quote Color: &nbsp;&nbsp;&nbsp;</span>
           <div wix-param="quoteColor" wix-ctrl="ColorPickerWithOpacity"
                wix-options="{startWithColor:'color-5'}"></div>
         </li>
-
         <li>
-          <span class="settingsInlineLabel">Background: </span>
-          <div wix-param="bgColor" wix-ctrl="ColorPicker" wix-options="{startWithColor:'color-1'}"></div>
-
-          <span class="settingsInlineLabel">Transparent: </span>
-          <div wix-model="bgTransparent" wix-ctrl="Checkbox"></div>
+          <span class="settingsInlineLable">Background Color:&nbsp;&nbsp;&nbsp;</span>
+          <div wix-param="bgColor" wix-ctrl="ColorPickerWithOpacity"
+               wix-options="{startWithColor:'color-5'}"></div>
         </li>
         <li>
-          <span class="settingsInlineLabel">Border: </span>
+          <span class="settingsInlineLabel">Border:&nbsp;&nbsp;&nbsp;</span>
           <div wix-param="borderColor" wix-ctrl="ColorPicker"
                wix-options="{startWithColor:'color-1'}"></div>
 
@@ -50,35 +48,40 @@
                wix-options="{ preLabel:'0', postLabel:'10', minValue:0, maxValue:10}"></div>
         </li>
         <li>
-          <span class="settingsInlineLabel">Corners: </span>
+          <span class="settingsInlineLabel">Corner Size:&nbsp;&nbsp;&nbsp;</span>
 
           <div wix-param="borderRadius" wix-ctrl="Slider"
                wix-options="{ preLabel:'0', postLabel:'25', minValue:0, maxValue:25}"></div>
         </li>
+        <li>
+          <span class="settingsInlineLabel">Update Frequency:</span>
+          <br/>
+          <div wix-param="frequnecy" wix-ctrl="Radio">
+            <div data-radio-value="1">Every minutes</div>
+            <div data-radio-value="2">Every 2 minutes</div>
+            <div data-radio-value="5">Every 5 minutes</div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
-
-  <div class="acc-pane">
+    <!--
     <h3>Sync Options</h3>
 
     <div class="acc-content">
-      <p>How many images to sync ?</p>
-
-      <div wix-model="imagesToSync" wix-ctrl="Radio">
-        <div data-radio-value="sync10">Sync 10 images</div>
-        <div data-radio-value="sync25">Sync 25 images</div>
-        <div data-radio-value="sync50">Sync 50 images</div>
-      </div>
-      <p>Sync Meta Data ?</p>
-
-      <div wix-model="imageMeta" wix-ctrl="Checkbox:{ postLabel:'Image Meta'}"></div>
-      <div wix-model="imageAlt" wix-ctrl="Checkbox:{ postLabel:'Image Alt'}"></div>
-      <div wix-model="imageLink" wix-ctrl="Checkbox:{ postLabel:'Image Link'}"></div>
     </div>
   </div>
 
   <div class="acc-pane">
+  </div>
+
+  <div class="acc-pane">
+    <p>Sync Meta Data ?</p>
+
+    <div wix-model="imageMeta" wix-ctrl="Checkbox:{ postLabel:'Image Meta'}"></div>
+    <div wix-model="imageAlt" wix-ctrl="Checkbox:{ postLabel:'Image Alt'}"></div>
+    <div wix-model="imageLink" wix-ctrl="Checkbox:{ postLabel:'Image Link'}"></div>
+
     <h3>Button Group</h3>
 
     <div class="acc-content">
@@ -100,6 +103,6 @@
 
       </textarea>
     </div>
-  </div>
+  </div-->
 
 </div>

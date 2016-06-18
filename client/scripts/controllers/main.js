@@ -5,7 +5,7 @@ angular.module('wixApp')
 
     var instanceId,
         instance;
-    var borderColor = quoteSettings.wixUi.borderColor;
+    var C_TIMEOUT = 5 * 60000; // Every 5 minutes
 
     $scope.handleEvent = function(event) {
       $scope.$apply(function() {
@@ -34,7 +34,7 @@ angular.module('wixApp')
       });
     }
 
-    setInterval(getRandomQuote, 2000);
+    setInterval(getRandomQuote, C_TIMEOUT);
 
     getRandomQuote();
 

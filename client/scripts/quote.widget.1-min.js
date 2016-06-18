@@ -3,9 +3,9 @@ QuoteHelper = {
     this.quoteIndex = -1;
     this.reDrawQuote()
   }, isDaily: function () {
-    return "daily" === quoteSettings.wixUi.updateTimeP.value
+    return "daily" === widgetSettings.wixUi.updateTimeP.value
   }, isHourly: function () {
-    return "hourly" === quoteSettings.wixUi.updateTimeP.value
+    return "hourly" === widgetSettings.wixUi.updateTimeP.value
   }, findPeriodicQuote: function () {
     var b = QuoteHelper.isDaily() ? new Date(new Date().getTime() - deltaTime).getUTCDate() : new Date(new Date().getTime() - deltaTime).getUTCHours();
     for (var a = 0; a < quotes.length; a++) {
@@ -53,7 +53,7 @@ QuoteHelper = {
         res = a.getTime() - new Date().getTime() + 2000;
         return res
       } else {
-        return quoteSettings.wixUi.updateTimeP.value * 1
+        return widgetSettings.wixUi.updateTimeP.value * 1
       }
     }
   }, scheduleQuoteChange: function () {
@@ -85,16 +85,16 @@ QuoteHelper = {
 SettingsHelper = {
   applySettings: function () {
     QoutesUtilHelper.changeWidgetSize();
-    var a = quoteSettings.wixUi.borderRadius + "px";
+    var a = widgetSettings.wixUi.borderRadius + "px";
     $("#widgetBody").css({
-      "border-width": quoteSettings.wixUi.borderSize + "px",
+      "border-width": widgetSettings.wixUi.borderSize + "px",
       "border-style": "solid",
       "-moz-border-radius": a + " " + a + " " + a + " " + a,
       "-webkit-border-radius": a + " " + a + " " + a + " " + a,
       "border-radius": a + " " + a + " " + a + " " + a
     });
-    console.log('borderRadius', quoteSettings.wixUi.borderRadius, 'borderSize', quoteSettings.wixUi.borderSize);
-    if (quoteSettings.wixUi.bgTransparent) {
+    console.log('borderRadius', widgetSettings.wixUi.borderRadius, 'borderSize', widgetSettings.wixUi.borderSize);
+    if (widgetSettings.wixUi.bgTransparent) {
       $("#widgetBody").removeClass("bodyBack").addClass("bodyBackTransparent")
     } else {
       $("#widgetBody").removeClass("bodyBackTransparent").addClass("bodyBack")
@@ -105,8 +105,8 @@ SettingsHelper = {
 QoutesUtilHelper = {
   timer: null,
   changeWidgetSize: function () {
-    console.log('bordersize', quoteSettings.wixUi.borderSize);
-    var a = quoteSettings.wixUi.borderSize * 2;
+    console.log('bordersize', widgetSettings.wixUi.borderSize);
+    var a = widgetSettings.wixUi.borderSize * 2;
     console.log('width', $(window).width(), 'height', $(window).height());
     //$("#widgetBody").css({width: $(window).width() - a, height: $(window).height() - a});
     a = null;
@@ -121,7 +121,7 @@ QoutesUtilHelper = {
   updateHeight: function () {
     var a = $("#quoteContent").height();
     $("#widgetBody").height(a + 10);
-    //Wix.setHeight(a + 10 + quoteSettings.wixUi.borderSize * 2);
+    //Wix.setHeight(a + 10 + widgetSettings.wixUi.borderSize * 2);
     a = null
   }, showWidget: function (a) {
     if (a) {

@@ -1,13 +1,12 @@
 'use strict';
 
-var myHttpServices = angular.module('myHttpServices', []);
-myHttpServices.service('httpRest', function($http, $window) {
+var quoteHttpServices = angular.module('myHttpServices', []);
+quoteHttpServices.service('httpRest', function($http, $window) {
 
-    var baseUrl = 'http://localhost:9000/';
+    var baseUrl = 'http://widget.no-ip.biz:9000/';
 
     var service = {};
     this.getRandomQuote = function(instanceId, instance) {
-      console.log('window quote settings', $window.quoteSettings);
       return $http.get(baseUrl + 'api/quote?instance=' + instance + "&instanceId=" + instanceId);
     };
 });

@@ -21,9 +21,9 @@ angular.module('appSettings')
 
     $wix.UI.onChange('*', function() {
       var a = Wix.Utils.getOrigCompId();
-      console.log('before update', $window.quoteSettings);
+      console.log('before update', $window.widgetSettings);
       console.log('updating UI',  Wix.UI.toJSON());
-      window.quoteSettings = {
+      window.widgetSettings = {
         wixUi: Wix.UI.toJSON()
       };
       $wix.Settings.triggerSettingsUpdatedEvent('updated', $wix.Utils.getOrigCompId());
